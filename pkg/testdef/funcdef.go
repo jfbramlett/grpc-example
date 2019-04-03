@@ -13,6 +13,7 @@ type Function struct {
 
 
 type TestDef struct {
+	Name				string			`json:"name"`
 	ClientClassName		string			`json:"clientClassName"`
 	Function			Function		`json:"function"`
 }
