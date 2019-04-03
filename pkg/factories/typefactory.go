@@ -4,10 +4,12 @@ import (
 	"fmt"
 	"github.com/jfbramlett/grpc-example/routeguide"
 	"reflect"
+	"strings"
 )
 
 type TypeFactory interface {
 	GetInstanceCreator(name string) (InstanceCreator, error)
+	GetInstanceCreatorForType(typ reflect.Type) (InstanceCreator, error)
 }
 
 func GetTypeFactory() TypeFactory {
@@ -16,8 +18,16 @@ func GetTypeFactory() TypeFactory {
 	return typeFactory
 }
 
-func typeNameFromIns(ins interface{}) string {
-	return fmt.Sprintf("%s", reflect.TypeOf(ins))
+func GetTypeNameFromIns(ins interface{}) string {
+	return GetTypeName(reflect.TypeOf(ins))
+}
+
+func GetTypeName(typ reflect.Type) string {
+	typeName := fmt.Sprintf("%s", typ)
+	if strings.HasPrefix(typeName, "*") {
+		typeName = typeName[1:]
+	}
+	return typeName
 }
 
 type grpcTypeFactory struct {
@@ -35,11 +45,19 @@ func (g *grpcTypeFactory) GetInstanceCreator(name string) (InstanceCreator, erro
 	}
 }
 
+func (g *grpcTypeFactory) GetInstanceCreatorForType(typ reflect.Type) (InstanceCreator, error) {
+	typeName := typ.String()
+	if strings.HasPrefix(typeName, "*") {
+		typeName = typeName[1:]
+	}
+	return g.GetInstanceCreator(typeName)
+}
+
 func (g *grpcTypeFactory) registerTypes() {
 	g.typeMap = make(map[string]InstanceCreator)
 
 	g.typeMap["context.Context"] = newContextInstanceCreator()
-	g.typeMap[typeNameFromIns(routeguide.RouteRequest{})] = newReflectionInstanceCreator(routeguide.RouteRequest{})
-	g.typeMap[typeNameFromIns(routeguide.RouteDetails{})] = newReflectionInstanceCreator(routeguide.RouteDetails{})
+	g.typeMap[GetTypeNameFromIns(routeguide.RouteRequest{})] = newReflectionInstanceCreator(routeguide.RouteRequest{})
+	g.typeMap[GetTypeNameFromIns(routeguide.RouteDetails{})] = newReflectionInstanceCreator(routeguide.RouteDetails{})
 }
 
