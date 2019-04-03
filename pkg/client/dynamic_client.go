@@ -3,11 +3,14 @@ package client
 import (
 	"fmt"
 	"github.com/jfbramlett/grpc-example/pkg/testdef"
+	"github.com/jfbramlett/grpc-example/routeguide"
 	"log"
+	"reflect"
 )
 
 func RunDynamicClient() {
-	suite, err := testdef.NewTestSuite("testdata/testsuite.json")
+	//suite, err := testdef.NewTestSuite("testdata/testsuite.json")
+	suite, err := testdef.NewAutoTestSuite(reflect.TypeOf((*routeguide.RouteGuideClient)(nil)).Elem())
 	if err != nil {
 		log.Fatalln(err)
 		return

@@ -106,7 +106,7 @@ func (f *basicTestSuite) invoke(testDef TestDef, any interface{}, name string, f
 	return method.Call(in)[0], nil
 }
 
-func (f *basicTestSuite) createParam(funcDef Function, argType reflect.Type, factory factories.TypeFactory) (interface{}, error) {
+func (f *basicTestSuite) createParam(funcDef FunctionDef, argType reflect.Type, factory factories.TypeFactory) (interface{}, error) {
 	insCreator, err := factory.GetInstanceCreatorForType(argType)
 	if err != nil {
 		return nil, err
@@ -149,4 +149,19 @@ func NewTestSuite(configFile string) (TestSuite, error) {
 	return &basicTestSuite{testSuiteDef: testSuite}, nil
 }
 
+
+func NewAutoTestSuite(interfaceType reflect.Type) (TestSuite, error) {
+	testSuite := TestSuiteDef{Tests: make([]TestDef, 0)}
+
+	for i := 0; i < interfaceType.NumMethod(); i++ {
+		methodName := interfaceType.Method(i).Name
+		testSuite.Tests = append(testSuite.Tests, TestDef{Name: fmt.Sprintf(" Test %s.%s", factories.GetTypeName(interfaceType), methodName),
+			ClientClassName: factories.GetTypeName(interfaceType),
+			Function: FunctionDef{Name: methodName},
+		})
+
+	}
+
+	return &basicTestSuite{testSuiteDef: testSuite}, nil
+}
 

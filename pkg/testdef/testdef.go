@@ -5,7 +5,7 @@ type FunctionArg struct {
 	FieldTags				map[string]string		`json:"fieldTags"`
 }
 
-type Function struct {
+type FunctionDef struct {
 	Name 		string						`json:"name"`
 	Args		map[string]FunctionArg		`json:"args"`
 }
@@ -14,7 +14,7 @@ type Function struct {
 type TestDef struct {
 	Name				string			`json:"name"`
 	ClientClassName		string			`json:"clientClassName"`
-	Function			Function		`json:"function"`
+	Function			FunctionDef		`json:"function"`
 }
 
 
