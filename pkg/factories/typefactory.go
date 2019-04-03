@@ -1,4 +1,4 @@
-package typefactory
+package factories
 
 import (
 	"fmt"
@@ -10,6 +10,15 @@ type TypeFactory interface {
 	GetInstanceCreator(name string) (InstanceCreator, error)
 }
 
+func GetTypeFactory() TypeFactory {
+	typeFactory := &grpcTypeFactory{}
+	typeFactory.registerTypes()
+	return typeFactory
+}
+
+func typeNameFromIns(ins interface{}) string {
+	return fmt.Sprintf("%s", reflect.TypeOf(ins))
+}
 
 type grpcTypeFactory struct {
 	typeMap 		map[string]InstanceCreator
@@ -27,18 +36,10 @@ func (g *grpcTypeFactory) GetInstanceCreator(name string) (InstanceCreator, erro
 }
 
 func (g *grpcTypeFactory) registerTypes() {
+	g.typeMap = make(map[string]InstanceCreator)
+
 	g.typeMap["context.Context"] = newContextInstanceCreator()
 	g.typeMap[typeNameFromIns(routeguide.RouteRequest{})] = newReflectionInstanceCreator(routeguide.RouteRequest{})
 	g.typeMap[typeNameFromIns(routeguide.RouteDetails{})] = newReflectionInstanceCreator(routeguide.RouteDetails{})
 }
 
-func typeNameFromIns(ins interface{}) string {
-	return fmt.Sprintf("%s", reflect.TypeOf(ins))
-}
-
-
-func GetTypeFactory() TypeFactory {
-	typeFactory := &grpcTypeFactory{typeMap: make(map[string]InstanceCreator)}
-	typeFactory.registerTypes()
-	return typeFactory
-}

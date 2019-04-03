@@ -1,0 +1,36 @@
+{
+  "tests": [
+    {
+      "clientClassName": "routeguide.RouteGuideClient",
+      "function": {
+        "name": "FindRoute",
+        "args":[
+          {
+            "funcType": "context.Context"
+          },
+          {
+            "funcType": "routeguide.RouteRequest",
+            "valuesOverrideJson": "{\"userid\": 15}",
+            "fieldTags": {"Email":  "email"}
+          }
+        ]
+      }
+    },
+    {
+      "clientClassName": "routeguide.RouteGuideClient",
+      "function": {
+        "name": "FindRoute",
+        "args":[
+          {
+            "funcType": "context.Context"
+          },
+          {
+            "funcType": "routeguide.RouteRequest",
+            "valuesOverrideJson": "{\"userid\": 30}",
+            "fieldTags": {"Email":  "email"}
+          }
+        ]
+      }
+    }
+  ]
+}

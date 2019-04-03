@@ -1,4 +1,4 @@
-package typefactory
+package factories
 
 import (
 	"context"
