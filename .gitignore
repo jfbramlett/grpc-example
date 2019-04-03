@@ -1,0 +1,4 @@
+.idea
+routeguide/*.go
+bin/
+go.sum
