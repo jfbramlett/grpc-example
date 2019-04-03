@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"github.com/jfbramlett/faker/pkg/fakegen"
-	"github.com/jfbramlett/grpc-example/interceptor"
 	"log"
 	"net"
 
@@ -38,7 +37,7 @@ func RunServer() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-	opts := []grpc.ServerOption{interceptor.WithServerUnaryInterceptor()}
+	opts := []grpc.ServerOption{WithServerUnaryInterceptor()}
 
 	grpcServer := grpc.NewServer(opts...)
 	routeguide.RegisterRouteGuideServer(grpcServer, newServer())
