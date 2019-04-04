@@ -10,7 +10,10 @@ import (
 
 func RunDynamicClient() {
 	//suite, err := testdef.NewTestSuite("testdata/testsuite.json")
-	suite, err := testdef.NewAutoTestSuite(reflect.TypeOf((*routeguide.RouteGuideClient)(nil)).Elem())
+	suite, err := testdef.NewAutoTestSuite(reflect.TypeOf((*routeguide.RouteGuideClient)(nil)).Elem(),
+		map[string]interface{} {"Destination": "UNC"},
+		map[string]string {"Email": "email"},
+		[]string {})
 	if err != nil {
 		log.Fatalln(err)
 		return

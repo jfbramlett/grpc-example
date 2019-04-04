@@ -40,13 +40,12 @@ func (f *basicTestSuite) Run() []TestResult {
 	}
 	defer conn.Close()
 
-	fakegen.AddFieldFilter("XXX_.*")
 	typeFactory := factories.GetTypeFactory()
 	clientFactory := factories.GetClientFactory(conn)
 
 
 	for _, testdef := range f.testSuiteDef.Tests {
-		err := f.runTest(testdef, clientFactory, typeFactory)
+		err := f.runTest(f.testSuiteDef, testdef, clientFactory, typeFactory)
 		if err != nil {
 			log.Println(fmt.Sprintf("Test: %s - FAILED   %s", testdef.Name, err))
 			testResults = append(testResults, TestResult{Name: testdef.Name, Passed: false, Error: err})
@@ -59,14 +58,14 @@ func (f *basicTestSuite) Run() []TestResult {
 	return testResults
 }
 
-func (f *basicTestSuite) runTest(test TestDef, clientFactory factories.ClientFactory, typeFactory factories.TypeFactory) error {
+func (f *basicTestSuite) runTest(testSuiteDef TestSuiteDef, test TestDef, clientFactory factories.ClientFactory, typeFactory factories.TypeFactory) error {
 	client, err := clientFactory.GetClient(test.ClientClassName)
 	if err != nil {
 		log.Println(err)
 		return err
 	}
 
-	response, err := f.invoke(test, client, test.Function.Name, typeFactory)
+	response, err := f.invoke(testSuiteDef, test, client, test.Function.Name, typeFactory)
 
 	if err != nil {
 		log.Println(fmt.Sprintf("Failed: %s", err))
@@ -78,7 +77,7 @@ func (f *basicTestSuite) runTest(test TestDef, clientFactory factories.ClientFac
 
 }
 
-func (f *basicTestSuite) invoke(testDef TestDef, any interface{}, name string, factory factories.TypeFactory) (reflect.Value, error) {
+func (f *basicTestSuite) invoke(testSuiteDef TestSuiteDef, testDef TestDef, any interface{}, name string, factory factories.TypeFactory) (reflect.Value, error) {
 	method := reflect.ValueOf(any).MethodByName(name)
 	methodType := method.Type()
 
@@ -96,7 +95,7 @@ func (f *basicTestSuite) invoke(testDef TestDef, any interface{}, name string, f
 	for i := 0; i < argCount; i++ {
 		methodArgType := methodType.In(i)
 
-		newInstance, err := f.createParam(testDef.Function, methodArgType, factory)
+		newInstance, err := f.createParam(testSuiteDef, testDef, testDef.Function, methodArgType, factory)
 		if err != nil {
 			return reflect.ValueOf(""), err
 		}
@@ -106,11 +105,13 @@ func (f *basicTestSuite) invoke(testDef TestDef, any interface{}, name string, f
 	return method.Call(in)[0], nil
 }
 
-func (f *basicTestSuite) createParam(funcDef FunctionDef, argType reflect.Type, factory factories.TypeFactory) (interface{}, error) {
+func (f *basicTestSuite) createParam(testSuiteDef TestSuiteDef, testDef TestDef, funcDef FunctionDef, argType reflect.Type, factory factories.TypeFactory) (interface{}, error) {
 	insCreator, err := factory.GetInstanceCreatorForType(argType)
 	if err != nil {
 		return nil, err
 	}
+
+	generator := f.getFakeGenerator(testSuiteDef, testDef)
 
 	newInstance := insCreator.NewInstance()
 
@@ -118,18 +119,50 @@ func (f *basicTestSuite) createParam(funcDef FunctionDef, argType reflect.Type, 
 
 	argDescription, found := funcDef.Args[argName]
 	if found && argDescription.FieldTags != nil {
-		fakegen.SetFieldTags(argDescription.FieldTags)
-	}
-	defer fakegen.ClearFieldTags()
-	fakegen.FakeData(newInstance)
-
-	if found && argDescription.ValuesOverrideJson != "" {
-		err := json.Unmarshal([]byte(argDescription.ValuesOverrideJson), newInstance)
-		if err != nil {
-			return nil, err
+		for k, v := range argDescription.FieldTags {
+			generator.AddFieldTag(k, v)
 		}
 	}
+
+	if found && argDescription.ValuesOverride != nil {
+		for k, v := range argDescription.ValuesOverride {
+			generator.AddProvider(k, StaticTagProvider{val: v}.GetTaggedValue)
+			generator.AddFieldTag(k, k)
+		}
+	}
+
+	generator.FakeData(newInstance)
+
 	return newInstance, nil
+}
+
+func (f *basicTestSuite) getFakeGenerator(testSuiteDef TestSuiteDef, testDef TestDef) *fakegen.FakeGenerator {
+	generator := fakegen.NewFakeGenerator()
+	generator.AddFieldFilter("XXX_.*")
+	if testSuiteDef.GlobalTags != nil {
+		for k, v := range testSuiteDef.GlobalTags {
+			generator.AddFieldTag(k, v)
+		}
+	}
+	if testDef.TestTags != nil {
+		for k, v := range testDef.TestTags {
+			generator.AddFieldTag(k, v)
+		}
+	}
+	if testSuiteDef.GlobalValues != nil {
+		for k, v := range testSuiteDef.GlobalValues {
+			generator.AddProvider(k, StaticTagProvider{val: v}.GetTaggedValue)
+			generator.AddFieldTag(k, k)
+		}
+	}
+	if testDef.TestValues != nil {
+		for k, v := range testDef.TestValues {
+			generator.AddProvider(k, StaticTagProvider{val: v}.GetTaggedValue)
+			generator.AddFieldTag(k, k)
+		}
+
+	}
+	return generator
 }
 
 func NewTestSuite(configFile string) (TestSuite, error) {
@@ -150,11 +183,16 @@ func NewTestSuite(configFile string) (TestSuite, error) {
 }
 
 
-func NewAutoTestSuite(interfaceType reflect.Type) (TestSuite, error) {
-	testSuite := TestSuiteDef{Tests: make([]TestDef, 0)}
+func NewAutoTestSuite(interfaceType reflect.Type, globalValues map[string]interface{}, globalTags map[string]string, excludes []string) (TestSuite, error) {
+	testSuite := TestSuiteDef{Tests: make([]TestDef, 0), GlobalValues: globalValues, GlobalTags: globalTags}
 
 	for i := 0; i < interfaceType.NumMethod(); i++ {
 		methodName := interfaceType.Method(i).Name
+		for _, excludedMethod := range excludes {
+			if methodName == excludedMethod {
+				continue
+			}
+		}
 		testSuite.Tests = append(testSuite.Tests, TestDef{Name: fmt.Sprintf(" Test %s.%s", factories.GetTypeName(interfaceType), methodName),
 			ClientClassName: factories.GetTypeName(interfaceType),
 			Function: FunctionDef{Name: methodName},
@@ -165,3 +203,12 @@ func NewAutoTestSuite(interfaceType reflect.Type) (TestSuite, error) {
 	return &basicTestSuite{testSuiteDef: testSuite}, nil
 }
 
+
+
+type StaticTagProvider struct {
+	val			interface{}
+}
+
+func (s StaticTagProvider) GetTaggedValue(v reflect.Value) (interface{}, error) {
+	return s.val, nil
+}

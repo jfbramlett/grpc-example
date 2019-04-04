@@ -13,21 +13,23 @@ import (
 )
 
 type routeGuideServer struct {
+	generator		*fakegen.FakeGenerator
 }
 
 
 func (s *routeGuideServer) FindRoute(ctx context.Context, r *routeguide.RouteRequest) (*routeguide.RouteDetails, error) {
 	fmt.Println("Received request for FindRoute", r)
-	fakegen.AddFieldFilter("XXX_.*")
+
+	s.generator.AddFieldFilter("XXX_.*")
 	routeResponse := &routeguide.RouteDetails{}
-	fakegen.FakeData(routeResponse)
+	s.generator.FakeData(routeResponse)
 	fmt.Println("Sending response: ", routeResponse)
 	return routeResponse, nil
 }
 
 
 func newServer() *routeGuideServer {
-	s := &routeGuideServer{}
+	s := &routeGuideServer{generator: fakegen.NewFakeGenerator()}
 	return s
 }
 

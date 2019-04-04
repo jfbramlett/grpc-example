@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d14dad6-b8c2-4e9e-801c-a0fb5457b84f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/client/dynamic_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/client/dynamic_client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/client/testdata/testsuite.json" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/client/testdata/testsuite.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/testdef/testdef.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/testdef/testdef.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/testdef/testsuite.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/testdef/testsuite.go" afterDir="false" />
     </list>
@@ -15,10 +20,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/panic.go">
+        <entry file="file://$PROJECT_DIR$/pkg/testdef/testsuite.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="680" selection-start-line="680" selection-end-line="680" />
+            <state relative-caret-position="302">
+              <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190404155241-9bb64c4c8664/pkg/fakegen/faker.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="689" column="41" selection-start-line="689" selection-start-column="24" selection-end-line="689" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -26,50 +40,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routeguide/route_guide.pb.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="3111">
               <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/factories/typefactory.go">
+        <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/reflect/value.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="38" />
+            <state relative-caret-position="298">
+              <caret line="246" selection-start-line="246" selection-end-line="246" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/client/dynamic_client.go">
+        <entry file="file://$PROJECT_DIR$/pkg/server/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="18" selection-end-column="26" />
-              <folding>
-                <element signature="e#16#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pkg/testdef/testsuite.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="126" column="73" lean-forward="true" selection-start-line="126" selection-start-column="73" selection-end-line="126" selection-end-column="73" />
-              <folding>
-                <element signature="e#17#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/proc.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="153" selection-start-line="153" selection-end-line="153" />
+            <state relative-caret-position="238">
+              <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -77,26 +67,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/testdef/testdef.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+            <state relative-caret-position="442">
+              <caret line="26" column="14" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pkg/client/dynamic_client.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+              <folding>
+                <element signature="e#16#150#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/reflect/type.go">
+        <entry file="file://$PROJECT_DIR$/go.mod">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="1377" selection-start-line="1377" selection-end-line="1377" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/google.golang.org/grpc@v1.19.1/clientconn.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="854" selection-start-line="854" selection-end-line="854" />
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -104,8 +97,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/client/testdata/testsuite.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="391">
+              <caret line="23" column="15" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routeguide/route_guide.proto">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -124,6 +126,7 @@
       <find>jsonDBFile</find>
       <find>bxcodec</find>
       <find>1:</find>
+      <find>generator</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go@1.11/1.11.6/libexec" />
@@ -137,7 +140,6 @@
         <option value="$PROJECT_DIR$/client/client.go" />
         <option value="$PROJECT_DIR$/routeguide/route_guide.proto" />
         <option value="$PROJECT_DIR$/pkg/typefactory/instancecreator.go" />
-        <option value="$PROJECT_DIR$/go.mod" />
         <option value="$PROJECT_DIR$/pkg/typefactory/common.go" />
         <option value="$PROJECT_DIR$/pkg/typefactory/typefactory.go" />
         <option value="$PROJECT_DIR$/pkg/funcdef/funcdef.go" />
@@ -147,21 +149,23 @@
         <option value="$PROJECT_DIR$/pkg/client/client_test.go" />
         <option value="$PROJECT_DIR$/pkg/client/client.go" />
         <option value="$PROJECT_DIR$/cmd/driver/driver.go" />
-        <option value="$PROJECT_DIR$/pkg/server/server.go" />
         <option value="$PROJECT_DIR$/pkg/testdef/funcdef.go" />
-        <option value="$PROJECT_DIR$/pkg/client/testdata/testsuite.json" />
         <option value="$PROJECT_DIR$/pkg/factories/typefactory.go" />
+        <option value="$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190403142207-d22fa263d77c/pkg/fakegen/faker.go" />
+        <option value="$PROJECT_DIR$/pkg/server/server.go" />
+        <option value="$PROJECT_DIR$/go.mod" />
         <option value="$PROJECT_DIR$/pkg/testdef/testdef.go" />
+        <option value="$PROJECT_DIR$/pkg/client/testdata/testsuite.json" />
         <option value="$PROJECT_DIR$/pkg/testdef/testsuite.go" />
         <option value="$PROJECT_DIR$/pkg/client/dynamic_client.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1774" />
-    <option name="y" value="97" />
-    <option name="width" value="1939" />
-    <option name="height" value="1186" />
+    <option name="x" value="2042" />
+    <option name="y" value="46" />
+    <option name="width" value="2118" />
+    <option name="height" value="1294" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -169,7 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -233,6 +236,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,16 +315,16 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1774" y="97" width="1939" height="1186" extended-state="0" />
+    <frame x="2042" y="46" width="2118" height="1294" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18186611" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49661705" visible="true" weight="0.21290945" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Structure" order="2" sideWeight="0.5033829" weight="0.21290945" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299817" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3299817" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39945155" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32861897" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38519135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -347,26 +351,29 @@
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/pkg/client/client.go</url>
           <line>34</line>
-          <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190403135445-1ad02afac1a0/pkg/fakegen/faker.go</url>
           <line>511</line>
-          <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/pkg/testdef/testsuite.go</url>
-          <line>116</line>
-          <properties />
-          <option name="timeStamp" value="17" />
+          <line>186</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/pkg/testdef/testsuite.go</url>
-          <line>153</line>
+          <line>133</line>
           <properties />
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/pkg/testdef/testsuite.go</url>
+          <line>139</line>
+          <properties />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -412,20 +419,6 @@
     <entry file="file://$PROJECT_DIR$/make_proto.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routeguide/route_guide.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go.sum">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190403135445-1ad02afac1a0/pkg/fakegen/faker.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -433,23 +426,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go.mod">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/factories/common.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#21#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/factories/common.go" />
     <entry file="file://$PROJECT_DIR$/cmd/driver/driver.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -461,13 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/server/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -495,78 +465,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/google.golang.org/grpc@v1.19.1/clientconn.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="854" selection-start-line="854" selection-end-line="854" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/reflect/type.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="1377" selection-start-line="1377" selection-end-line="1377" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/client/testdata/testsuite.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/testdef/testdef.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routeguide/route_guide.pb.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/proc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/panic.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="11492">
           <caret line="680" selection-start-line="680" selection-end-line="680" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/factories/typefactory.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="38" />
+        <state relative-caret-position="340">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/client/dynamic_client.go">
+    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/proc.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="e#16#87#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2516">
+          <caret line="153" selection-start-line="153" selection-end-line="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/reflect/type.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23290">
+          <caret line="1377" selection-start-line="1377" selection-end-line="1377" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/google.golang.org/grpc@v1.19.1/clientconn.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14025">
+          <caret line="854" selection-start-line="854" selection-end-line="854" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190403142207-d22fa263d77c/pkg/fakegen/faker.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="259" selection-start-line="256" selection-end-line="259" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/server/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go.sum">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routeguide/route_guide.pb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3111">
+          <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routeguide/route_guide.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/reflect/value.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="246" selection-start-line="246" selection-end-line="246" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190404155241-9bb64c4c8664/pkg/fakegen/faker.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="689" column="41" selection-start-line="689" selection-start-column="24" selection-end-line="689" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go.mod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/testdef/testdef.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/client/testdata/testsuite.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="15" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/testdef/testsuite.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="126" column="73" lean-forward="true" selection-start-line="126" selection-start-column="73" selection-end-line="126" selection-end-column="73" />
+        <state relative-caret-position="302">
+          <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/client/dynamic_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding>
-            <element signature="e#17#45#0" expanded="true" />
+            <element signature="e#16#150#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -6,10 +6,7 @@
         "name": "FindRoute",
         "args": {
           "routeguide.RouteRequest": {
-            "valuesOverrideJson": "{\"userid\": 15}",
-            "fieldTags": {
-              "Email": "email"
-            }
+            "valuesOverride": {"Destination":  "UNC"}
           }
         }
       }
@@ -20,5 +17,11 @@
         "name": "FindRoute"
       }
     }
-  ]
+  ],
+  "globalTags" : {
+    "Email" : "email"
+  },
+  "globalValues": {
+    "Userid": 15
+  }
 }
