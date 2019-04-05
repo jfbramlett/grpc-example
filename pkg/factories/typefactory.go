@@ -10,6 +10,7 @@ import (
 type TypeFactory interface {
 	GetInstanceCreator(name string) (InstanceCreator, error)
 	GetInstanceCreatorForType(typ reflect.Type) (InstanceCreator, error)
+	Close()
 }
 
 func GetTypeFactory() TypeFactory {
@@ -52,6 +53,8 @@ func (g *grpcTypeFactory) GetInstanceCreatorForType(typ reflect.Type) (InstanceC
 	}
 	return g.GetInstanceCreator(typeName)
 }
+
+func (g *grpcTypeFactory) Close() {}
 
 func (g *grpcTypeFactory) registerTypes() {
 	g.typeMap = make(map[string]InstanceCreator)

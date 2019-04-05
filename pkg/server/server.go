@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 	"fmt"
-	"github.com/jfbramlett/faker/pkg/fakegen"
+	"github.com/jfbramlett/faker/fakegen"
 	"log"
 	"net"
 

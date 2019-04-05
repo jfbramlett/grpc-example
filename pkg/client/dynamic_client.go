@@ -2,15 +2,15 @@ package client
 
 import (
 	"fmt"
-	"github.com/jfbramlett/grpc-example/pkg/testdef"
+	"github.com/jfbramlett/grpc-example/pkg/rundef"
 	"github.com/jfbramlett/grpc-example/routeguide"
 	"log"
 	"reflect"
 )
 
 func RunDynamicClient() {
-	//suite, err := testdef.NewTestSuite("testdata/testsuite.json")
-	suite, err := testdef.NewAutoTestSuite(reflect.TypeOf((*routeguide.RouteGuideClient)(nil)).Elem(),
+	//suite, err := testdef.NewRunSuite("testdata/runsuite.json")
+	suite, err := rundef.NewAutoRunSuite(reflect.TypeOf((*routeguide.RouteGuideClient)(nil)).Elem(),
 		map[string]interface{} {"Destination": "UNC"},
 		map[string]string {"Email": "email"},
 		[]string {})
@@ -35,5 +35,7 @@ func RunDynamicClient() {
 	log.Println(fmt.Sprintf("Total Tests: %d", passedCount + failedCount))
 	log.Println(fmt.Sprintf("Passed Tests: %d", passedCount))
 	log.Println(fmt.Sprintf("Failed Tests: %d", failedCount))
+
+
 }
 

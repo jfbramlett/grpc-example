@@ -7,8 +7,8 @@ github.com/golang/mock v1.1.1/go.mod h1:oTYuIxOrZwtPieC+H1uAHpcLFnEyAGVDL/k47Jfb
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/golang/protobuf v1.3.1 h1:YF8+flBXS5eO826T4nzqPrxfhQThhXl0YzfuUPu4SBg=
 github.com/golang/protobuf v1.3.1/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
-github.com/jfbramlett/faker v0.0.0-20190404162203-bd0e22884703 h1:Npbr5Om9VqAoWFuLiL81gZ2ptXoxhqGvbuq76BtWjWk=
-github.com/jfbramlett/faker v0.0.0-20190404162203-bd0e22884703/go.mod h1:YiEcgYhCo239/HxXqzDjplp5mW/pSZrVcc5vxHDsHsM=
+github.com/jfbramlett/faker v0.0.0-20190405165640-9b3c3d3cca31 h1:O/8kFP2CO6mUhAT4shj19j6C1lFFJcDZYOzEfwqAkoY=
+github.com/jfbramlett/faker v0.0.0-20190405165640-9b3c3d3cca31/go.mod h1:YiEcgYhCo239/HxXqzDjplp5mW/pSZrVcc5vxHDsHsM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/sevlyar/retag v0.0.0-20180713035850-a4ec7f599acf/go.mod h1:mOWh3Kdot9kBKCLbKcJTzIBBEPKRJAq2lk03eVVDmco=
 github.com/spf13/cast v1.3.0 h1:oget//CVOEoFewqQxwr0Ej5yjygnqGkvggSE/gB35Q8=
