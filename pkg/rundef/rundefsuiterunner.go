@@ -15,6 +15,7 @@ type RunSuiteRunner interface {
 
 type RunResult struct {
 	Name		string
+	Result		reflect.Value
 	Passed		bool
 	Error		error
 }
@@ -43,16 +44,8 @@ func (f *basicRunSuite) Run() []RunResult {
 }
 
 func NewRunSuite(configFile string) (RunSuiteRunner, error) {
-	runSuite := RunDefSuite{}
-	runSuiteDef, err := ioutil.ReadFile(configFile)
+	runSuite, err := buildRunSuiteFromFile(configFile)
 	if err != nil {
-		log.Fatalln(err)
-		return nil, err
-	}
-
-	err = json.Unmarshal(runSuiteDef, &runSuite)
-	if err != nil {
-		log.Fatalln(err)
 		return nil, err
 	}
 
@@ -61,6 +54,34 @@ func NewRunSuite(configFile string) (RunSuiteRunner, error) {
 
 
 func NewAutoRunSuite(interfaceType reflect.Type, globalValues map[string]interface{}, globalTags map[string]string, excludes []string) (RunSuiteRunner, error) {
+	runSuite, err := buildRunSuiteFromType(interfaceType, globalValues, globalTags, excludes)
+	if err != nil {
+		return nil, err
+	}
+
+	return &basicRunSuite{runSuite: runSuite}, nil
+}
+
+
+
+func buildRunSuiteFromFile(configFile string) (RunDefSuite, error) {
+	runSuite := RunDefSuite{}
+	runSuiteDef, err := ioutil.ReadFile(configFile)
+	if err != nil {
+		log.Fatalln(err)
+		return RunDefSuite{}, err
+	}
+
+	err = json.Unmarshal(runSuiteDef, &runSuite)
+	if err != nil {
+		log.Fatalln(err)
+		return RunDefSuite{}, err
+	}
+
+	return runSuite, nil
+}
+
+func buildRunSuiteFromType(interfaceType reflect.Type, globalValues map[string]interface{}, globalTags map[string]string, excludes []string) (RunDefSuite, error) {
 	runSuite := RunDefSuite{Tests: make([]RunDef, 0), GlobalValues: globalValues, GlobalTags: globalTags}
 
 	for i := 0; i < interfaceType.NumMethod(); i++ {
@@ -76,6 +97,5 @@ func NewAutoRunSuite(interfaceType reflect.Type, globalValues map[string]interfa
 		})
 
 	}
-
-	return &basicRunSuite{runSuite: runSuite}, nil
+	return runSuite, nil
 }

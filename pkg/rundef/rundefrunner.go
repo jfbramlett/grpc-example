@@ -38,7 +38,7 @@ func (b *basicRunDefRunner) Run() RunResult {
 		return b.failedRun(err)
 	} else {
 		log.Println(fmt.Sprintf("Success: %v", response))
-		return b.passedRun()
+		return b.passedRun(response)
 	}
 }
 
@@ -107,8 +107,8 @@ func (b *basicRunDefRunner) failedRun(err error) RunResult {
 	return RunResult{Name: b.runDef.Name, Passed: false, Error: err}
 }
 
-func (b *basicRunDefRunner) passedRun() RunResult {
-	return RunResult{Name: b.runDef.Name, Passed: true}
+func (b *basicRunDefRunner) passedRun(result reflect.Value) RunResult {
+	return RunResult{Name: b.runDef.Name, Passed: true, Result: result}
 }
 
 

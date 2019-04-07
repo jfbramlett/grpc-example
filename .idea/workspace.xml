@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d14dad6-b8c2-4e9e-801c-a0fb5457b84f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/rundef/rundefrunner.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/client/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/client/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/client/dynamic_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/client/dynamic_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/client/testdata/testsuite.json" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/client/testdata/runsuite.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/factories/clientfactory.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/factories/clientfactory.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/factories/typefactory.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/factories/typefactory.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/testdef/testdef.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/rundef/rundef.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/testdef/testsuite.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/rundef/rundefrunner.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/rundef/rundefrunner.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +16,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routeguide/route_guide.pb.go">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefrunner.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="192" selection-start-line="192" selection-end-line="192" />
+            <state relative-caret-position="170">
+              <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+              <folding>
+                <element signature="e#16#142#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,89 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="e#17#191#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/factories/typefactory.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
-              <folding>
-                <element signature="e#19#107#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/client/dynamic_client.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
-              <folding>
-                <element signature="e#16#150#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pkg/client/client.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
-              <folding>
-                <element signature="e#16#127#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmd/driver/driver.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-              <folding>
-                <element signature="e#14#137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/factories/clientfactory.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefrunner.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-              <folding>
-                <element signature="e#17#143#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/client/testdata/runsuite.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            <state relative-caret-position="189">
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -126,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/rundef/rundef.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+            <state relative-caret-position="349">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -150,7 +64,7 @@
       <find>FindRoute</find>
     </findStrings>
   </component>
-  <component name="GOROOT" path="/usr/local/Cellar/go@1.11/1.11.6/libexec" />
+  <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -182,19 +96,19 @@
         <option value="$PROJECT_DIR$/pkg/rundef/rundef.go" />
         <option value="$PROJECT_DIR$/cmd/driver/driver.go" />
         <option value="$PROJECT_DIR$/pkg/client/dynamic_client.go" />
-        <option value="$PROJECT_DIR$/pkg/rundef/rundefrunner.go" />
         <option value="$PROJECT_DIR$/pkg/factories/typefactory.go" />
         <option value="$PROJECT_DIR$/pkg/factories/clientfactory.go" />
-        <option value="$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go" />
         <option value="$PROJECT_DIR$/pkg/client/client.go" />
+        <option value="$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go" />
+        <option value="$PROJECT_DIR$/pkg/rundef/rundefrunner.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2042" />
-    <option name="y" value="46" />
-    <option name="width" value="2118" />
-    <option name="height" value="1294" />
+    <option name="x" value="58" />
+    <option name="y" value="37" />
+    <option name="width" value="1824" />
+    <option name="height" value="1007" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -202,6 +116,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -265,7 +180,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,7 +195,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -344,15 +258,15 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2042" y="46" width="2118" height="1294" extended-state="0" />
+    <frame x="58" y="37" width="1824" height="1007" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49661705" visible="true" weight="0.21290945" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49661705" visible="true" weight="0.16346154" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" sideWeight="0.5033829" weight="0.21290945" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294509" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32861897" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3278496" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38519135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -373,6 +287,7 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+    <vendoring-mode>true</vendoring-mode>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -388,32 +303,13 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go</url>
-          <line>191</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go</url>
-          <line>138</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go</url>
-          <line>144</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/routeguide/route_guide.pb.go</url>
           <line>222</line>
-          <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/pkg/factories/clientfactory.go</url>
           <line>64</line>
-          <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
@@ -437,72 +333,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/go/1.12.1/libexec/src/runtime/panic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="689" selection-start-line="689" selection-end-line="689" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.12.1/libexec/src/runtime/panic.go" />
     <entry file="file://$PROJECT_DIR$/testdata/route_guide_db.json" />
     <entry file="file://$PROJECT_DIR$/mock_routeguide/rg_mock_test.go" />
     <entry file="file://$PROJECT_DIR$/mock_routeguide/rg_mock.go" />
-    <entry file="file:///usr/local/Cellar/go/1.12.1/libexec/src/reflect/type.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16320">
-          <caret line="1095" column="5" selection-start-line="1095" selection-start-column="5" selection-end-line="1095" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.12.1/libexec/src/reflect/type.go" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/make_proto.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190403135445-1ad02afac1a0/pkg/fakegen/faker.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="521" column="5" selection-start-line="521" selection-start-column="5" selection-end-line="521" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190403135445-1ad02afac1a0/pkg/fakegen/faker.go" />
     <entry file="file://$PROJECT_DIR$/pkg/factories/common.go" />
-    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/panic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11492">
-          <caret line="680" selection-start-line="680" selection-end-line="680" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/proc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/reflect/type.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23290">
-          <caret line="1377" selection-start-line="1377" selection-end-line="1377" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/google.golang.org/grpc@v1.19.1/clientconn.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14025">
-          <caret line="854" selection-start-line="854" selection-end-line="854" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190403142207-d22fa263d77c/pkg/fakegen/faker.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="259" selection-start-line="256" selection-end-line="259" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/panic.go" />
+    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/proc.go" />
+    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/reflect/type.go" />
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/google.golang.org/grpc@v1.19.1/clientconn.go" />
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190403142207-d22fa263d77c/pkg/fakegen/faker.go" />
     <entry file="file://$PROJECT_DIR$/routeguide/route_guide.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -510,13 +358,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190404155241-9bb64c4c8664/pkg/fakegen/faker.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="689" column="41" selection-start-line="689" selection-start-column="24" selection-end-line="689" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/github.com/jfbramlett/faker@v0.0.0-20190404155241-9bb64c4c8664/pkg/fakegen/faker.go" />
     <entry file="file://$PROJECT_DIR$/go.sum">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -551,34 +393,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/rundef/testenv.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/reflect/value.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="446" selection-start-line="446" selection-end-line="446" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/asm_amd64.s">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="451" selection-start-line="451" selection-end-line="451" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/google.golang.org/grpc@v1.19.1/call.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/rundef/testenv.go" />
+    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/reflect/value.go" />
+    <entry file="file:///usr/local/Cellar/go@1.11/1.11.6/libexec/src/runtime/asm_amd64.s" />
+    <entry file="file://$PROJECT_DIR$/../../../../pkg/mod/google.golang.org/grpc@v1.19.1/call.go" />
     <entry file="file://$PROJECT_DIR$/pkg/server/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -588,48 +406,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routeguide/route_guide.pb.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="3496">
           <caret line="192" selection-start-line="192" selection-end-line="192" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundef.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/client/testdata/runsuite.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/driver/driver.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="e#14#137#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefrunner.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding>
-            <element signature="e#17#143#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/factories/typefactory.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
+        <state relative-caret-position="969">
           <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
           <folding>
             <element signature="e#19#107#0" expanded="true" />
@@ -637,39 +421,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/driver/driver.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pkg/factories/clientfactory.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
+        <state relative-caret-position="171">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#17#191#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/client/dynamic_client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="e#16#150#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/client/client.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <element signature="e#16#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/client/testdata/runsuite.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/client/dynamic_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundef.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefrunner.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+          <folding>
+            <element signature="e#16#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
