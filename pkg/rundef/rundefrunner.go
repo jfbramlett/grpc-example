@@ -12,16 +12,18 @@ type RunDefRunner interface {
 	Run() RunResult
 }
 
-func NewRunDefRunner(runSuiteDef RunDefSuite, runDef RunDef, typeFactory factories.TypeFactory, clientFactory factories.ClientFactory) RunDefRunner {
+func NewRunDefRunner(runSuiteDef RunDefSuite, runDef RunDef, typeFactory factories.TypeFactory,
+	clientFactory factories.ClientFactory, validator Validator) RunDefRunner {
 	return &basicRunDefRunner{runSuiteDef: runSuiteDef, runDef: runDef, typeFactory: typeFactory,
-		clientFactory: clientFactory}
+		clientFactory: clientFactory, validator: validator}
 }
 
 type basicRunDefRunner struct {
-	runSuiteDef 	RunDefSuite
-	runDef 			RunDef
-	typeFactory		factories.TypeFactory
-	clientFactory	factories.ClientFactory
+	runSuiteDef 		RunDefSuite
+	runDef 				RunDef
+	typeFactory			factories.TypeFactory
+	clientFactory		factories.ClientFactory
+	validator			Validator
 }
 
 func (b *basicRunDefRunner) Run() RunResult {
@@ -31,40 +33,31 @@ func (b *basicRunDefRunner) Run() RunResult {
 		return b.failedRun(err)
 	}
 
-	response, err :=b.invokeTestAgainst(client)
+	success, err :=b.invokeTestAgainst(client)
 
 	if err != nil {
 		log.Println(fmt.Sprintf("Failed: %s", err))
 		return b.failedRun(err)
 	} else {
 		log.Println(fmt.Sprintf("Success: %v", response))
-		return b.passedRun(response)
+		return b.passedRun()
 	}
 }
 
-func (b *basicRunDefRunner) invokeTestAgainst(any interface{}) (reflect.Value, error) {
+func (b *basicRunDefRunner) invokeTestAgainst(any interface{}) (bool, error) {
 	method, err := b.getMethod(any)
 	if err != nil {
-		return reflect.ValueOf(""), err
+		return false, err
 	}
 
 	params, err := b.getParams(method)
 	if err != nil {
-		return reflect.ValueOf(""), err
+		return false, err
 	}
 
 	result := method.Call(params)
-	if len(result) == 2 {
-		var err error
-		if result[1].IsNil() {
-			err = nil
-		} else {
-			err = result[1].Interface().(error)
-		}
-		return result[0], err
-	} else {
-		return result[0], nil
-	}
+
+	return b.validator.Validate(result)
 }
 
 func (b *basicRunDefRunner) getMethod(any interface{}) (reflect.Value, error) {
@@ -107,8 +100,8 @@ func (b *basicRunDefRunner) failedRun(err error) RunResult {
 	return RunResult{Name: b.runDef.Name, Passed: false, Error: err}
 }
 
-func (b *basicRunDefRunner) passedRun(result reflect.Value) RunResult {
-	return RunResult{Name: b.runDef.Name, Passed: true, Result: result}
+func (b *basicRunDefRunner) passedRun() RunResult {
+	return RunResult{Name: b.runDef.Name, Passed: true}
 }
 
 

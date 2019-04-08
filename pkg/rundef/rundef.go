@@ -17,6 +17,7 @@ type RunDef struct {
 	Function        FunctionDef            `json:"function"`
 	RunValues       map[string]interface{} `json:"runValues"`
 	RunTags         map[string]string      `json:"runTags"`
+	Validator		string				   `json:"validator"`
 }
 
 

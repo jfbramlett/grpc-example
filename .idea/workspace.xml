@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d14dad6-b8c2-4e9e-801c-a0fb5457b84f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/factories/validatorfactory.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/rundef/runresult.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/rundef/runvalidation.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/rundef/rundef.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/rundef/rundef.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/rundef/rundefrunner.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/rundef/rundefrunner.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/rundef/runresult.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/rundef/runresult.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,20 +19,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefrunner.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1159">
-              <caret line="67" selection-start-line="56" selection-end-line="67" />
+            <state relative-caret-position="189">
+              <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
               <folding>
                 <element signature="e#16#142#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/rundef/runresult.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -49,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            <state relative-caret-position="301">
+              <caret line="34" column="170" selection-start-line="34" selection-start-column="170" selection-end-line="34" selection-end-column="170" />
             </state>
           </provider>
         </entry>
@@ -70,17 +61,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/rundef/rundef.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+            <state relative-caret-position="225">
+              <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/rundef/runresult.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/factories/validatorfactory.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+            <state relative-caret-position="73">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="e#19#89#0" expanded="true" />
               </folding>
@@ -93,6 +93,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
               <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/client/testdata/runsuite.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -144,19 +153,20 @@
         <option value="$PROJECT_DIR$/pkg/client/testdata/testsuite.json" />
         <option value="$PROJECT_DIR$/pkg/testdef/rundefrunner.go" />
         <option value="$PROJECT_DIR$/pkg/testdef/rundefsuiterunner.go" />
-        <option value="$PROJECT_DIR$/pkg/rundef/rundef.go" />
         <option value="$PROJECT_DIR$/cmd/driver/driver.go" />
         <option value="$PROJECT_DIR$/pkg/client/dynamic_client.go" />
         <option value="$PROJECT_DIR$/pkg/factories/typefactory.go" />
         <option value="$PROJECT_DIR$/pkg/factories/clientfactory.go" />
         <option value="$PROJECT_DIR$/pkg/client/client.go" />
-        <option value="$PROJECT_DIR$/pkg/rundef/rundefrunner.go" />
         <option value="$PROJECT_DIR$/pkg/rundef/result.go" />
-        <option value="$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go" />
-        <option value="$PROJECT_DIR$/pkg/rundef/runresult.go" />
         <option value="$PROJECT_DIR$/pkg/rundef/runvalidation.go" />
         <option value="$PROJECT_DIR$/pkg/factories/validationfactory.go" />
         <option value="$PROJECT_DIR$/pkg/factories/validatorfactory.go" />
+        <option value="$PROJECT_DIR$/pkg/client/testdata/runsuite.json" />
+        <option value="$PROJECT_DIR$/pkg/rundef/rundef.go" />
+        <option value="$PROJECT_DIR$/pkg/rundef/rundefrunner.go" />
+        <option value="$PROJECT_DIR$/pkg/rundef/runresult.go" />
+        <option value="$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go" />
       </list>
     </option>
   </component>
@@ -320,16 +330,17 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49661705" visible="true" weight="0.16346154" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" sideWeight="0.5033829" weight="0.21290945" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3294509" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3278496" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32902467" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3278496" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38519135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3299817" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32902467" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -343,7 +354,6 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
-    <vendoring-mode>true</vendoring-mode>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -487,55 +497,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/client/testdata/runsuite.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pkg/client/dynamic_client.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/rundef/runvalidation.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/rundef/runresult.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefrunner.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="67" selection-start-line="56" selection-end-line="67" />
-          <folding>
-            <element signature="e#16#142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundef.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -556,13 +521,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/client/testdata/runsuite.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pkg/factories/validatorfactory.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        <state relative-caret-position="73">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="e#19#89#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/rundef/runvalidation.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefrunner.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+          <folding>
+            <element signature="e#16#142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundef.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/rundef/runresult.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/rundef/rundefsuiterunner.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="34" column="170" selection-start-line="34" selection-start-column="170" selection-end-line="34" selection-end-column="170" />
         </state>
       </provider>
     </entry>

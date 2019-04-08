@@ -23,9 +23,20 @@ func (f *basicRunSuite) Run() []RunResult {
 
 	clientFactory := factories.GetClientFactory()
 	typeFactory := factories.GetTypeFactory()
+	validatorFactory := factories.GetValidatorFactory()
 
 	for _, runDef := range f.runSuite.Tests {
-		runner := NewRunDefRunner(f.runSuite, runDef, typeFactory, clientFactory)
+		var validator Validator
+		if runDef.Validator == "" {
+			validator = &DefaultValidator{}
+		} else {
+			valid, err := validatorFactory.GetValidator(runDef.Validator)
+			if err != nil {
+				testResults = append(testResults, RunResult{Name: runDef.Name, Passed: false, Error: fmt.Errorf("failed to find configured validator %s", runDef.Validator)})
+			}
+			validator = valid
+		}
+		runner := NewRunDefRunner(f.runSuite, runDef, typeFactory, clientFactory, validator)
 		result := runner.Run()
 		testResults = append(testResults, result)
 	}
