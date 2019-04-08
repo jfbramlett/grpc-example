@@ -2,20 +2,16 @@
   "runDefinitions": [
     {
       "clientClassName": "routeguide.RouteGuideClient",
-      "function": {
-        "name": "FindRoute",
-        "args": {
-          "routeguide.RouteRequest": {
-            "valuesOverride": {"Destination":  "UNC"}
-          }
+      "functionName": "FindRoute",
+      "args": {
+        "routeguide.RouteRequest": {
+          "valuesOverride": {"Destination":  "UNC"}
         }
       }
     },
     {
       "clientClassName": "routeguide.RouteGuideClient",
-      "function": {
-        "name": "FindRoute"
-      }
+      "functionName": "FindRoute"
     }
   ],
   "globalTags" : {

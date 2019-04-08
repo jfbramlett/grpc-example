@@ -1,4 +1,4 @@
-package rundef
+package runner
 
 import (
 	"fmt"
@@ -14,8 +14,8 @@ type SuiteRunner interface {
 
 // simple runner that just runs the tests and reports the results
 type basicSuiteRunner struct {
-	runSuite		RunDefSuite
-	runnerFactory	RunnerFactory
+	runSuiteDef   RunSuiteDef
+	runnerFactory RunnerFactory
 }
 
 func (f *basicSuiteRunner) Run() []RunResult {
@@ -25,13 +25,13 @@ func (f *basicSuiteRunner) Run() []RunResult {
 	typeFactory := factories.GetTypeFactory()
 	validatorFactory := valid.GetValidatorFactory()
 
-	for _, runDef := range f.runSuite.Tests {
+	for _, runDef := range f.runSuiteDef.Tests {
 		validator, err := getValidator(runDef, validatorFactory)
 		if err != nil {
 			testResults = append(testResults, RunResult{Name: runDef.Name, Passed: false, Error: fmt.Errorf("failed to find configured validator %s", runDef.Validator)})
 			continue
 		}
-		runner := f.runnerFactory.GetRunner(f.runSuite, runDef, typeFactory, clientFactory, validator)
+		runner := f.runnerFactory.GetRunner(f.runSuiteDef, runDef, typeFactory, clientFactory, validator)
 		result := runner.Run()
 		testResults = append(testResults, result)
 	}
@@ -75,10 +75,10 @@ func NewAutoTestingRunSuite(t *testing.T, interfaceType reflect.Type, globalValu
 	return newRunSuite(runSuite, t), nil
 }
 
-func newRunSuite(runSuite RunDefSuite, t *testing.T) SuiteRunner {
+func newRunSuite(runSuite RunSuiteDef, t *testing.T) SuiteRunner {
 	if t != nil {
-		return &basicSuiteRunner{runSuite: runSuite, runnerFactory: &testingRunnerFactory{mainTest: t}}
+		return &basicSuiteRunner{runSuiteDef: runSuite, runnerFactory: &testingRunnerFactory{mainTest: t}}
 	} else {
-		return &basicSuiteRunner{runSuite: runSuite, runnerFactory: &defaultRunnerFactory{}}
+		return &basicSuiteRunner{runSuiteDef: runSuite, runnerFactory: &defaultRunnerFactory{}}
 	}
 }

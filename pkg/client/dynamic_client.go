@@ -2,18 +2,18 @@ package client
 
 import (
 	"fmt"
-	"github.com/jfbramlett/grpc-example/pkg/rundef"
-	"github.com/jfbramlett/grpc-example/routeguide"
+	"github.com/jfbramlett/grpc-example/pkg/runner"
 	"log"
-	"reflect"
 )
 
 func RunDynamicClient() {
-	//suite, err := testdef.NewRunSuite("testdata/runsuite.json")
+	suite, err := runner.NewRunSuite("testdata/runsuite.json")
+	/*
 	suite, err := rundef.NewAutoRunSuite(reflect.TypeOf((*routeguide.RouteGuideClient)(nil)).Elem(),
 		map[string]interface{} {"Destination": "UNC"},
 		map[string]string {"Email": "email"},
 		[]string {})
+	 */
 	if err != nil {
 		log.Fatalln(err)
 		return

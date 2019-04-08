@@ -1,4 +1,4 @@
-package rundef
+package runner
 
 import (
 	"fmt"
@@ -14,18 +14,18 @@ type Runner interface {
 	Run() RunResult
 }
 
-func NewRunner(runSuiteDef RunDefSuite, runDef RunDef, typeFactory factories.TypeFactory,
+func NewRunner(runSuiteDef RunSuiteDef, runDef RunDef, typeFactory factories.TypeFactory,
 	clientFactory factories.ClientFactory, validator valid.Validator) Runner {
 	return &basicRunner{runSuiteDef: runSuiteDef, runDef: runDef, typeFactory: typeFactory,
 		clientFactory: clientFactory, validator: validator}
 }
 
 type basicRunner struct {
-	runSuiteDef 		RunDefSuite
-	runDef 				RunDef
-	typeFactory			factories.TypeFactory
-	clientFactory		factories.ClientFactory
-	validator			valid.Validator
+	runSuiteDef   RunSuiteDef
+	runDef        RunDef
+	typeFactory   factories.TypeFactory
+	clientFactory factories.ClientFactory
+	validator     valid.Validator
 }
 
 func (b *basicRunner) Run() RunResult {
@@ -63,9 +63,9 @@ func (b *basicRunner) invokeTestAgainst(any interface{}) (bool, error) {
 }
 
 func (b *basicRunner) getMethod(any interface{}) (reflect.Value, error) {
-	meth := reflect.ValueOf(any).MethodByName(b.runDef.Function.Name)
+	meth := reflect.ValueOf(any).MethodByName(b.runDef.FunctionName)
 	if meth.IsNil() {
-		return reflect.ValueOf(""), fmt.Errorf("failed to find method %s", b.runDef.Function.Name)
+		return reflect.ValueOf(""), fmt.Errorf("failed to find method %s", b.runDef.FunctionName)
 	}
 
 	return meth, nil
@@ -79,7 +79,7 @@ func (b *basicRunner) getParams(method reflect.Value) ([]reflect.Value, error) {
 		argCount--
 	}
 
-	argDef := b.runDef.Function.Args
+	argDef := b.runDef.Args
 	if argDef == nil {
 		argDef = make(map[string]FunctionArg)
 	}
@@ -119,7 +119,7 @@ func (f *basicRunner) createParam(argType reflect.Type) (interface{}, error) {
 
 	argName := factories.GetTypeName(argType)
 
-	argDescription, found := f.runDef.Function.Args[argName]
+	argDescription, found := f.runDef.Args[argName]
 	if found && argDescription.FieldTags != nil {
 		for k, v := range argDescription.FieldTags {
 			generator.AddFieldTag(k, v)
@@ -146,23 +146,12 @@ func (f *basicRunner) getFakeGenerator() *fakegen.FakeGenerator {
 			generator.AddFieldTag(k, v)
 		}
 	}
-	if f.runDef.RunTags != nil {
-		for k, v := range f.runDef.RunTags {
-			generator.AddFieldTag(k, v)
-		}
-	}
+
 	if f.runSuiteDef.GlobalValues != nil {
 		for k, v := range f.runSuiteDef.GlobalValues {
 			generator.AddProvider(k, StaticTagProvider{val: v}.GetTaggedValue)
 			generator.AddFieldTag(k, k)
 		}
-	}
-	if f.runDef.RunValues != nil {
-		for k, v := range f.runDef.RunValues {
-			generator.AddProvider(k, StaticTagProvider{val: v}.GetTaggedValue)
-			generator.AddFieldTag(k, k)
-		}
-
 	}
 	return generator
 }
