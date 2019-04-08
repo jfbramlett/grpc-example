@@ -2,11 +2,32 @@ package client
 
 import (
 	"fmt"
-	"github.com/jfbramlett/grpc-example/pkg/runner"
+	"github.com/jfbramlett/go-dynamic-runner/factories"
+	"github.com/jfbramlett/go-dynamic-runner/runner"
+	"github.com/jfbramlett/grpc-example/routeguide"
+	"google.golang.org/grpc"
 	"log"
 )
 
 func RunDynamicClient() {
+	connections := make([]*grpc.ClientConn, 0)
+	defer func() {
+		for _, c := range connections {
+			c.Close()
+		}
+	}()
+
+	conn := newGrpcClient("localhost:2112")
+	if conn == nil {
+		log.Fatalln("failed to resolve grpc connection")
+	}
+	connections = append(connections, conn)
+	factories.GlobalClientFactory.RegisterClient("routeguide.RouteGuideClient", routeguide.NewRouteGuideClient(conn))
+
+	factories.GlobalTypeFactory.RegisterType(factories.GetTypeNameFromIns(routeguide.RouteRequest{}), factories.NewReflectionInstanceCreator(routeguide.RouteRequest{}))
+	factories.GlobalTypeFactory.RegisterType(factories.GetTypeNameFromIns(routeguide.RouteDetails{}), factories.NewReflectionInstanceCreator(routeguide.RouteDetails{}))
+
+
 	suite, err := runner.NewRunSuite("testdata/runsuite.json")
 	/*
 	suite, err := rundef.NewAutoRunSuite(reflect.TypeOf((*routeguide.RouteGuideClient)(nil)).Elem(),
