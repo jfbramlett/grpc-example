@@ -13,13 +13,6 @@ type RunSuiteRunner interface {
 	Run() []RunResult
 }
 
-type RunResult struct {
-	Name		string
-	Result		reflect.Value
-	Passed		bool
-	Error		error
-}
-
 
 type basicRunSuite struct {
 	runSuite		RunDefSuite
