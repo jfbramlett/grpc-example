@@ -7,19 +7,20 @@ import (
 	valid "github.com/jfbramlett/grpc-example/pkg/validator"
 	"log"
 	"reflect"
+	"testing"
 )
 
-type RunDefRunner interface {
+type Runner interface {
 	Run() RunResult
 }
 
-func NewRunDefRunner(runSuiteDef RunDefSuite, runDef RunDef, typeFactory factories.TypeFactory,
-	clientFactory factories.ClientFactory, validator valid.Validator) RunDefRunner {
-	return &basicRunDefRunner{runSuiteDef: runSuiteDef, runDef: runDef, typeFactory: typeFactory,
+func NewRunner(runSuiteDef RunDefSuite, runDef RunDef, typeFactory factories.TypeFactory,
+	clientFactory factories.ClientFactory, validator valid.Validator) Runner {
+	return &basicRunner{runSuiteDef: runSuiteDef, runDef: runDef, typeFactory: typeFactory,
 		clientFactory: clientFactory, validator: validator}
 }
 
-type basicRunDefRunner struct {
+type basicRunner struct {
 	runSuiteDef 		RunDefSuite
 	runDef 				RunDef
 	typeFactory			factories.TypeFactory
@@ -27,7 +28,7 @@ type basicRunDefRunner struct {
 	validator			valid.Validator
 }
 
-func (b *basicRunDefRunner) Run() RunResult {
+func (b *basicRunner) Run() RunResult {
 	client, err := b.clientFactory.GetClient(b.runDef.ClientClassName)
 	if err != nil {
 		log.Println(err)
@@ -45,7 +46,7 @@ func (b *basicRunDefRunner) Run() RunResult {
 	}
 }
 
-func (b *basicRunDefRunner) invokeTestAgainst(any interface{}) (bool, error) {
+func (b *basicRunner) invokeTestAgainst(any interface{}) (bool, error) {
 	method, err := b.getMethod(any)
 	if err != nil {
 		return false, err
@@ -61,7 +62,7 @@ func (b *basicRunDefRunner) invokeTestAgainst(any interface{}) (bool, error) {
 	return b.validator.Validate(result)
 }
 
-func (b *basicRunDefRunner) getMethod(any interface{}) (reflect.Value, error) {
+func (b *basicRunner) getMethod(any interface{}) (reflect.Value, error) {
 	meth := reflect.ValueOf(any).MethodByName(b.runDef.Function.Name)
 	if meth.IsNil() {
 		return reflect.ValueOf(""), fmt.Errorf("failed to find method %s", b.runDef.Function.Name)
@@ -70,7 +71,7 @@ func (b *basicRunDefRunner) getMethod(any interface{}) (reflect.Value, error) {
 	return meth, nil
 }
 
-func (b *basicRunDefRunner) getParams(method reflect.Value) ([]reflect.Value, error) {
+func (b *basicRunner) getParams(method reflect.Value) ([]reflect.Value, error) {
 	methodType := method.Type()
 
 	argCount := methodType.NumIn()
@@ -97,16 +98,16 @@ func (b *basicRunDefRunner) getParams(method reflect.Value) ([]reflect.Value, er
 	return in, nil
 }
 
-func (b *basicRunDefRunner) failedRun(err error) RunResult {
+func (b *basicRunner) failedRun(err error) RunResult {
 	return RunResult{Name: b.runDef.Name, Passed: false, Error: err}
 }
 
-func (b *basicRunDefRunner) passedRun() RunResult {
+func (b *basicRunner) passedRun() RunResult {
 	return RunResult{Name: b.runDef.Name, Passed: true}
 }
 
 
-func (f *basicRunDefRunner) createParam(argType reflect.Type) (interface{}, error) {
+func (f *basicRunner) createParam(argType reflect.Type) (interface{}, error) {
 	insCreator, err := f.typeFactory.GetInstanceCreatorForType(argType)
 	if err != nil {
 		return nil, err
@@ -137,7 +138,7 @@ func (f *basicRunDefRunner) createParam(argType reflect.Type) (interface{}, erro
 	return newInstance, nil
 }
 
-func (f *basicRunDefRunner) getFakeGenerator() *fakegen.FakeGenerator {
+func (f *basicRunner) getFakeGenerator() *fakegen.FakeGenerator {
 	generator := fakegen.NewFakeGenerator()
 	generator.AddFieldFilter("XXX_.*")
 	if f.runSuiteDef.GlobalTags != nil {
@@ -173,4 +174,27 @@ val			interface{}
 
 func (s StaticTagProvider) GetTaggedValue(v reflect.Value) (interface{}, error) {
 	return s.val, nil
+}
+
+
+// Variation of our runner that runs the test as a sub-test of the given test
+type testingRunner struct {
+	underlying		Runner
+	name			string
+	mainTest		*testing.T
+}
+
+func (b *testingRunner) Run() RunResult {
+	var result RunResult
+	b.mainTest.Run(b.name, func(t *testing.T){
+		result = b.underlying.Run()
+		if !result.Passed {
+			t.Fail()
+		}
+	})
+	return result
+}
+
+func NewTestingRunner(t *testing.T, name string, underlying Runner) Runner {
+	return &testingRunner{underlying: underlying, name: name, mainTest: t}
 }
