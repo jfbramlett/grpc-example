@@ -1,9 +1,9 @@
-package rundef
+package validator
 
 import "reflect"
 
 type Validator interface {
-	Validate(results []reflect.Value) (bool, err)
+	Validate(results []reflect.Value) (bool, error)
 }
 
 

@@ -1,12 +1,11 @@
-package factories
+package validator
 
 import (
 	"fmt"
-	"github.com/jfbramlett/grpc-example/pkg/rundef"
 )
 
 type ValidatorFactory interface {
-	GetValidator(name string) (rundef.Validator, error)
+	GetValidator(name string) (Validator, error)
 }
 
 func GetValidatorFactory() ValidatorFactory {
@@ -17,11 +16,11 @@ func GetValidatorFactory() ValidatorFactory {
 
 
 type simpleValidatorFactory struct {
-	validators 		map[string]rundef.Validator
+	validators 		map[string]Validator
 }
 
 
-func (v *simpleValidatorFactory) GetValidator(name string) (rundef.Validator, error) {
+func (v *simpleValidatorFactory) GetValidator(name string) (Validator, error) {
 	validator, found := v.validators[name]
 	if !found {
 		return nil, fmt.Errorf("failed to find validator named %s", name)
@@ -32,6 +31,6 @@ func (v *simpleValidatorFactory) GetValidator(name string) (rundef.Validator, er
 
 
 func (v *simpleValidatorFactory) registerValidators() {
-	v.validators = make(map[string]rundef.Validator)
-	v.validators["default"] = &rundef.DefaultValidator{}
+	v.validators = make(map[string]Validator)
+	v.validators["default"] = &DefaultValidator{}
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/jfbramlett/faker/fakegen"
 	"github.com/jfbramlett/grpc-example/pkg/factories"
+	valid "github.com/jfbramlett/grpc-example/pkg/validator"
 	"log"
 	"reflect"
 )
@@ -13,7 +14,7 @@ type RunDefRunner interface {
 }
 
 func NewRunDefRunner(runSuiteDef RunDefSuite, runDef RunDef, typeFactory factories.TypeFactory,
-	clientFactory factories.ClientFactory, validator Validator) RunDefRunner {
+	clientFactory factories.ClientFactory, validator valid.Validator) RunDefRunner {
 	return &basicRunDefRunner{runSuiteDef: runSuiteDef, runDef: runDef, typeFactory: typeFactory,
 		clientFactory: clientFactory, validator: validator}
 }
@@ -23,7 +24,7 @@ type basicRunDefRunner struct {
 	runDef 				RunDef
 	typeFactory			factories.TypeFactory
 	clientFactory		factories.ClientFactory
-	validator			Validator
+	validator			valid.Validator
 }
 
 func (b *basicRunDefRunner) Run() RunResult {
@@ -33,13 +34,13 @@ func (b *basicRunDefRunner) Run() RunResult {
 		return b.failedRun(err)
 	}
 
-	success, err :=b.invokeTestAgainst(client)
+	_, err =b.invokeTestAgainst(client)
 
 	if err != nil {
 		log.Println(fmt.Sprintf("Failed: %s", err))
 		return b.failedRun(err)
 	} else {
-		log.Println(fmt.Sprintf("Success: %v", response))
+		log.Println("Success")
 		return b.passedRun()
 	}
 }

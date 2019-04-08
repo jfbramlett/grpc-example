@@ -5,6 +5,7 @@ type FunctionArg struct {
 	FieldTags				map[string]string		`json:"fieldTags"`
 }
 
+
 type FunctionDef struct {
 	Name 		string						`json:"name"`
 	Args		map[string]FunctionArg		`json:"args"`
@@ -21,9 +22,15 @@ type RunDef struct {
 }
 
 
-
 type RunDefSuite struct {
 	Tests			[]RunDef              	`json:"runDefinitions"`
 	GlobalValues	map[string]interface{} 	`json:"globalValues"`
 	GlobalTags		map[string]string    	`json:"globalTags"`
+}
+
+
+type RunResult struct {
+	Name		string
+	Passed		bool
+	Error		error
 }
